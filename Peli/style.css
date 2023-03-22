@@ -1,0 +1,78 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 8rem);
+    grid-template-rows: 8rem 2rem 8rem;
+    gap: 3rem;
+    cursor: pointer;
+    justify-content: center;
+    padding-top: 6rem;
+}
+
+.split {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+    user-select: none;
+}
+
+.computer-split {
+    background-color: purple;
+}
+
+.player-split {
+    background-color: green;
+}
+
+.text {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.token {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: white;
+}
+
+.token.red {
+    color: red;
+}
+
+.token.blue {
+    color: blue
+}
+
+.token::before,
+.token::after {
+    position: absolute;
+    content: attr(data-value);
+    font-size: 2rem;
+}
+
+.token::before {
+    top: .5rem
+}
+
+.token::after {
+    bottom: .5rem;
+
+}
